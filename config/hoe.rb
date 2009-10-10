@@ -4,9 +4,8 @@ AUTHOR = 'Benjamin Curtis'  # can also be an array of Authors
 EMAIL = "benjamin.curtis@gmail.com"
 DESCRIPTION = "A port of Perl's Data::Faker - Generates fake names, phone numbers, etc."
 GEM_NAME = 'faker' # what ppl will type to install your gem
-RUBYFORGE_PROJECT = 'faker' # The unix name for your project
-HOMEPATH = "http://#{RUBYFORGE_PROJECT}.rubyforge.org"
-DOWNLOAD_PATH = "http://rubyforge.org/projects/#{RUBYFORGE_PROJECT}"
+HOMEPATH = "http://github.com/mrluanma/faker"
+DOWNLOAD_PATH = "http://github.com/mrluanma/faker"
 
 @config_file = "~/.rubyforge/user-config.yml"
 @config = nil
@@ -47,13 +46,13 @@ end
 
 # Generate all the Rake tasks
 # Run 'rake -T' to see list of generated tasks (from gem root directory)
-hoe = Hoe.new(GEM_NAME, VERS) do |p|
+hoe = Hoe.spec(GEM_NAME) do |p|
   p.author = AUTHOR 
   p.description = DESCRIPTION
   p.email = EMAIL
+  p.version = VERS
   p.summary = DESCRIPTION
   p.url = HOMEPATH
-  p.rubyforge_name = RUBYFORGE_PROJECT if RUBYFORGE_PROJECT
   p.test_globs = ["test/**/test_*.rb"]
   p.clean_globs |= ['**/.*.sw?', '*.gem', '.config', '**/.DS_Store']  #An array of file patterns to delete on clean.
   
@@ -66,6 +65,3 @@ hoe = Hoe.new(GEM_NAME, VERS) do |p|
 end
 
 CHANGES = hoe.paragraphs_of('History.txt', 0..1).join("\\n\\n")
-PATH    = (RUBYFORGE_PROJECT == GEM_NAME) ? RUBYFORGE_PROJECT : "#{RUBYFORGE_PROJECT}/#{GEM_NAME}"
-hoe.remote_rdoc_dir = File.join(PATH.gsub(/^#{RUBYFORGE_PROJECT}\/?/,''), 'rdoc')
-hoe.rsync_args = '-av --delete --ignore-errors'
