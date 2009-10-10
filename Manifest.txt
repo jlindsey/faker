@@ -15,6 +15,10 @@ lib/faker/lorem.rb
 lib/faker/name.rb
 lib/faker/phone_number.rb
 lib/faker/version.rb
+lib/faker/cn/address.rb
+lib/faker/cn/company.rb
+lib/faker/cn/lorem.rb
+lib/faker/cn/name.rb
 script/destroy
 script/generate
 script/txt2html

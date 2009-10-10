@@ -8,6 +8,11 @@ require 'faker/name'
 require 'faker/phone_number'
 require 'faker/version'
 
+require 'faker/cn/address'
+require 'faker/cn/company'
+require 'faker/cn/lorem'
+require 'faker/cn/name'
+
 require 'extensions/array'
 require 'extensions/object'
 
