@@ -8,6 +8,7 @@ require 'faker/name'
 require 'faker/phone_number'
 require 'faker/version'
 
+require 'faker/cn/city_data'
 require 'faker/cn/address'
 require 'faker/cn/company'
 require 'faker/cn/lorem'

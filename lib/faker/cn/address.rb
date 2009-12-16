@@ -8,21 +8,19 @@ module Faker
         end
       
         def province
-          [
-           '四川', '贵州', '广东', '广西', '浙江', '云南', '吉林',
-           '黑龙江', '辽宁', '山东', '河南', '河北', '安徽'
-          ].rand << '省'
+          ProvinceData.rand
         end
-      
+
         def city
-          [
-           '贵阳', '遵义', '六盘水', '成都', '重庆', '杭州', '昆明',
-           '吉林', '延吉', '长春', '哈尔滨', '大连', '青岛', '大庆'
-          ].rand << '市'
+          LongCityData.rand
+        end
+        
+        def short_city
+          ShortCityData.rand
         end
       
         def street_suffix
-          ['', '', '', '', '', '', '东', '南', '西', '北', '中'].rand
+          ([''] * 8 + ['东', '南', '西', '北', '中']).rand
         end        
 
         def street_name
