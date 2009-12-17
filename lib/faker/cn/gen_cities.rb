@@ -1,14 +1,9 @@
 # File: gen_cities.rb -*- Encoding: utf-8 -*-
-# Time-stamp: <luanma 12/16/2009 13:30:08>
-
-require 'json'
-require 'prettyprint'
-
-city_data = JSON.parse(File.new('city_data.json').read)
+# Time-stamp: <luanma 12/17/2009 00:57:59>
 
 File.open('city_data.rb', 'w') do |f|
   f.puts <<RUBY
-# -*- encoding: utf-8 -*-
+# File: city_data.rb -*- Encoding: utf-8 -*-
 
 module Faker
   module CN
@@ -16,8 +11,9 @@ module Faker
       CityData = 
 RUBY
 
-  require 'pp'
-  PP.pp city_data, f
+  File.foreach('city_data.json') do |line|
+    f.print ' ' * 8, line.gsub(':', ' =>') unless /\/\// =~ line
+  end  
 
   f.puts <<RUBY
       ProvinceData = CityData['city'].collect do |province, _| province end
