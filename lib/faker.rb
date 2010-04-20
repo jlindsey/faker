@@ -9,6 +9,12 @@ require 'faker/phone_number'
 require 'faker/ssn'
 require 'faker/version'
 
+require 'faker/cn/city_data'
+require 'faker/cn/address'
+require 'faker/cn/company'
+require 'faker/cn/lorem'
+require 'faker/cn/name'
+
 require 'extensions/array'
 require 'extensions/object'
 
