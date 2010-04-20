@@ -6,6 +6,7 @@ require 'faker/internet'
 require 'faker/lorem'
 require 'faker/name'
 require 'faker/phone_number'
+require 'faker/ssn'
 require 'faker/version'
 
 require 'extensions/array'
